@@ -5,7 +5,7 @@
 #include "metrics.h"
 #include "sync.h"
 
-metrics_store_t mstore;
+metrics mstore;
 
 void metrics_init(void) {
     memset(&mstore, 0, sizeof(mstore));
