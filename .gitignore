@@ -1,0 +1,18 @@
+# Ejecutables
+*.out
+*.exe
+
+# Objetos compilados
+*.o
+
+# Binarios
+bin/
+
+# Archivos temporales
+*.log
+
+# VS Code
+.vscode/
+
+# CMake (si usas)
+build/
