@@ -3,10 +3,10 @@
 
 #include "pcb.h"
 
-#define QUEUE_MAX 64
+#define MAX 10//Maximo de procesos en cola
 //Estructura de una cola de procesos listos para ejecutarse
 typedef struct {
-    pcb_t *procs[QUEUE_MAX];//Array con los procesos
+    pcb_t *procs[MAX];//Array con los procesos
     int head;//Inicio de la cola
     int tail;//Fin de la cola
     int count;//Cantidad de procesos en cola

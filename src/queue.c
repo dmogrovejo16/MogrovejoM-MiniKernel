@@ -11,9 +11,9 @@ void queue_init(ready_queue_t *q) { //Metodo para crear la cola
 }
 
 int queue_enqueue(ready_queue_t *q, pcb_t *p) {//Metodo para insertar en cola
-    if (q->count >= QUEUE_MAX) return -1;  //Si la cola ya esta llena error 
+    if (q->count >= MAX) return -1;  //Si la cola ya esta llena error 
     q->procs[q->tail] = p;
-    q->tail = (q->tail + 1) % QUEUE_MAX;
+    q->tail = (q->tail + 1) % MAX;
     q->count++;
     return 0;
 }
@@ -21,7 +21,7 @@ int queue_enqueue(ready_queue_t *q, pcb_t *p) {//Metodo para insertar en cola
 pcb_t *queue_dequeue(ready_queue_t *q) {//Metodo para retirar de cola
     if (q->count == 0) return NULL;//Si la cola esta vacia error
     pcb_t *p = q->procs[q->head];
-    q->head = (q->head + 1) % QUEUE_MAX;
+    q->head = (q->head + 1) % MAX;
     q->count--;
     return p;
 }

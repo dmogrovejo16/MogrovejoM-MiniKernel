@@ -57,7 +57,7 @@ void *process_generator(void *arg) {
         pthread_mutex_lock(&kernel.mutex);
 
         //Si la cola esta llena hay que esperar
-        while (kernel.queue.count >= QUEUE_MAX) {
+        while (kernel.queue.count >= MAX) {
             pthread_cond_wait(&kernel.cond_not_full, &kernel.mutex);
         }
 		
